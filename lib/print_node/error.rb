@@ -53,6 +53,7 @@ module FaradayMiddleware
 end
 
 module PrintNode
+  
   # Custom error class for rescuing from all Print Node errors
   class Error < StandardError; end
 
