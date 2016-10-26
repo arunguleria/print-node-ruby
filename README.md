@@ -48,7 +48,9 @@ end
 
 Client connections can be passed to each method:
 
-`PrintNode::PrintJob.new(client.connection)`
+```ruby
+PrintNode::PrintJob.new(client.connection)
+```
 
 Documentation is available [here](http://www.rubydoc.info/github/arunguleria/print-node-ruby)
 
