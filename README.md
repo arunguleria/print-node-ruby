@@ -2,7 +2,15 @@
 
 [![Gem Version](https://badge.fury.io/rb/print-node-ruby.svg)](https://badge.fury.io/rb/print-node-ruby)[![Code Climate](https://codeclimate.com/github/arunguleria/print-node-ruby/badges/gpa.svg)](https://codeclimate.com/github/arunguleria/print-node-ruby)
 
-TODO: Delete this and the text above, and describe your gem
+Ruby wrapper for [Print Node APIs](https://www.printnode.com/docs/api/curl).
+
+You must be a registered user of these APIs to use this gem.
+
+__Features__
+
+* ViewPrinters
+* PrintJob(PDF File)
+* GetPrinterDetail
 
 ## Installation
 
@@ -14,14 +22,37 @@ gem 'print_node'
 
 And then execute:
 
-    $ bundle
+`$ bundle`
 
 Or install it yourself as:
 
-    $ gem install print_node
+`$ gem install print_node`
 
 ## Usage
 
+### Configuration Options
+
+By default credentials are taken from the local environment, for this to work the following ENV variables must be set:
+
+* `ENV['USERNAME']`
+* `ENV['PASSWORD']`
+
+You can also configure credentials via ` PrintNode::Client.new`:
+
+```ruby
+client = PrintNode::Client.new.tap do |config|
+  config.username      = ENV['USERNAME']
+  config.password      = ENV['PASSWORD']
+end
+```
+
+Client connections can be passed to each method:
+
+`PrintNode::PrintJob.new(client.connection)`
+
+Documentation is available [here](http://www.rubydoc.info/github/arunguleria/print-node-ruby)
+
+Some usage examples are also available [here](example/mock.rb)
 
 ## Development
 
